@@ -1,8 +1,9 @@
 {
-  "name": "template",
+  "name": "ts-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "private": true,
   "scripts": {
     "always-debug": "tsx watch --ignore ./tests --inspect --trace-warnings ./src/bot.ts",
     "debug": "tsx --inspect --trace-warnings ./src/bot.ts",
