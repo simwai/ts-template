@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Store the original commit message
+COMMIT_MSG_FILE="$GIT_DIR/COMMIT_EDITMSG"
+if [ -f "$COMMIT_MSG_FILE" ]; then
+  COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+else
+  COMMIT_MSG=""
+fi
+
+# Check if test files exist
+TEST_FILES=$(find ../src -name '*.test.js' -o -name '*.spec.js' | wc -l)
+
+if [ "$TEST_FILES" -gt 0 ]; then
+  npm run test
+
+  # Exit if tests fail
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
+fi
+
+# Format JavaScript code
+npm run format
+
+# Stage any changes made by formatting
+if ! git diff --quiet; then
+  git add -u
+
+  # Reapply the original commit message to the new staged changes
+  if [ -n "$COMMIT_MSG" ]; then
+    echo "$COMMIT_MSG" > "$COMMIT_MSG_FILE"
+  fi
+fi
