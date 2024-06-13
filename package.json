@@ -5,11 +5,11 @@
   "main": "index.ts",
   "private": true,
   "scripts": {
-    "always-debug": "tsx watch --ignore ./tests --inspect --trace-warnings ./src/bot.ts",
-    "debug": "tsx --inspect --trace-warnings ./src/bot.ts",
+    "always-debug": "tsx watch --ignore ./tests --inspect --trace-warnings ./src/index.ts",
+    "debug": "tsx --inspect --trace-warnings ./src/index.ts",
     "format": "xo --fix --prettier",
     "lint": "xo --fix",
-    "start": "tsx src/bot.ts",
+    "start": "tsx src/index.ts",
     "stop-debug": "taskkill /F /IM node.exe",
     "test": "npx ava",
     "prepare": "husky"
@@ -49,9 +49,41 @@
     "rules": {
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/consistent-type-imports": "off",
-      "@typescript-eslint/naming-convention": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
       "@typescript-eslint/prefer-promise-reject-errors": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": [
+            "memberLike",
+            "method"
+          ],
+          "modifiers": [
+            "private"
+          ],
+          "format": [
+            "camelCase"
+          ],
+          "leadingUnderscore": "require"
+        },
+        {
+          "selector": "variable",
+          "types": [
+            "boolean"
+          ],
+          "format": [
+            "camelCase"
+          ],
+          "prefix": [
+            "is",
+            "should",
+            "has",
+            "can",
+            "did",
+            "will"
+          ]
+        }
+      ],
       "import/extensions": "off",
       "max-params": "off",
       "new-cap": "off",
