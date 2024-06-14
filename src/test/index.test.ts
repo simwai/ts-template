@@ -1,10 +1,10 @@
 // Small test example
 import test_, { TestFn } from 'ava'
-import { stub, StubbableType } from 'sinon'
+import { SinonStub, stub } from 'sinon'
 
 type MyTestContext = {
-  consoleLogStub: StubbableType<Console>
-  consoleTraceStub: StubbableType<Console>
+  consoleLogStub: SinonStub
+  consoleTraceStub: SinonStub
 }
 const test: TestFn<MyTestContext> = test_ as unknown as TestFn<MyTestContext>
 
