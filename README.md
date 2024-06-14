@@ -40,9 +40,3 @@ Debug your application:
 ```sh
 npm run debug
 ```
-
-## License
-
-MIT © [Your Name](https://yourwebsite.com)
-
-This README is now formatted in a way that you can directly copy and paste into your README.md file. It includes a brief description of the project, installation instructions, usage details, and a note on the license. The continuous integration section mentions Husky, which is used to automate linting and formatting checks before commits, ensuring code quality without manual intervention.
