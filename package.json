@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "exports": "./index.ts",
-  "private": true,
   "scripts": {
     "always-debug": "tsx watch --ignore ./tests --inspect --trace-warnings ./src/index.ts",
     "debug": "tsx --inspect --trace-warnings ./src/index.ts",
@@ -14,9 +13,12 @@
     "test": "npx ava",
     "prepare": "husky"
   },
-  "keywords": [],
+  "keywords": [
+    "ts"
+  ],
   "author": "simwai",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "chalk": "^5.3.0"
   },
