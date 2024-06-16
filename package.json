@@ -4,7 +4,7 @@
   "description": "",
   "exports": "./index.ts",
   "scripts": {
-    "always-debug": "tsx watch --ignore ./tests --inspect --trace-warnings ./src/index.ts",
+    "always-debug": "tsx watch --ignore ./test --inspect --trace-warnings ./src/index.ts",
     "debug": "tsx --inspect --trace-warnings ./src/index.ts",
     "format": "xo --fix --prettier",
     "lint": "xo --fix",
