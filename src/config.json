@@ -1,0 +1,6 @@
+{
+  "HEADLESS": true,
+  "PARALLEL_MODE": true,
+  "TRACING": false,
+  "EXIT_ON_SCRAPING_ERROR": true
+}
