@@ -20,7 +20,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@simwai/utils": "^1.3.0"
+    "@simwai/utils": "^1.4.0"
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "^5.0.0",
