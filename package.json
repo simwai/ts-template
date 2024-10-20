@@ -7,7 +7,6 @@
     "always-debug": "tsx watch --ignore ./test --inspect --trace-warnings ./src/index.ts",
     "debug": "tsx --inspect --trace-warnings ./src/index.ts",
     "format": "xo --fix --prettier",
-    "lint": "xo --fix",
     "start": "tsx src/index.ts",
     "stop-debug": "taskkill /F /IM node.exe",
     "test": "npx ava",
