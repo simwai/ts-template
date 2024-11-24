@@ -18,22 +18,36 @@
   "author": "simwai",
   "license": "MIT",
   "type": "module",
-  "dependencies": {
-    "@simwai/utils": "^1.4.0"
-  },
   "devDependencies": {
+    "@ava/typescript": "^5.0.0",
+    "@simwai/utils": "^2.0.6",
     "@sindresorhus/tsconfig": "^5.0.0",
     "@types/sinon": "^17.0.3",
-    "typescript": "^5.4.5",
-    "tsx": "^4.9.3",
     "ava": "^6.1.3",
     "husky": "^9.0.11",
     "sinon": "^18.0.0",
     "taskkill": "^5.0.0",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5",
     "xo": "^0.58.0"
   },
   "engines": {
     "node": ">=20"
+  },
+  "ava": {
+    "files": [
+      "./src/test/**/*.test.ts"
+    ],
+    "typescript": {
+      "rewritePaths": {
+        "src/": "build/"
+      },
+      "compile": "tsc"
+    },
+    "concurrency": 5,
+    "failFast": false,
+    "failWithoutAssertions": false,
+    "verbose": true
   },
   "xo": {
     "envs": [
@@ -48,21 +62,6 @@
     "files": [
       "./src/**/*.ts"
     ],
-    "ava": {
-      "files": [
-        "./src/test/**/*.test.ts"
-      ],
-      "typescript": {
-        "rewritePaths": {
-          "src/": "build/"
-        },
-        "compile": "tsc"
-      },
-      "concurrency": 5,
-      "failFast": false,
-      "failWithoutAssertions": false,
-      "verbose": true
-    },
     "rules": {
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/consistent-type-imports": "off",

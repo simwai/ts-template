@@ -13,3 +13,8 @@ test.beforeEach((t) => {
   t.context.consoleLogStub = stub(console, 'log')
   t.context.consoleTraceStub = stub(console, 'trace')
 })
+
+// Demo
+test('demo', async (t) => {
+  t.true(true)
+})

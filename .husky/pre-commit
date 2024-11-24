@@ -10,15 +10,11 @@ else
 fi
 
 # Check if test files exist
-TEST_FILES=$(find ../src -name '*.test.js' -o -name '*.spec.js' | wc -l)
+TEST_FILES=$(find . -name '*.test.js' -o -name '*.spec.js' | wc -l)
 
 if [ "$TEST_FILES" -gt 0 ]; then
-  npm run test
-
   # Exit if tests fail
-  if [ $? -ne 0 ]; then
-    exit 1
-  fi
+  npm run test || exit 1
 fi
 
 # Format JavaScript code

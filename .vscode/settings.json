@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "xo.enable": true,
   "xo.format.enable": true,
   "[javascript]": {
@@ -13,5 +13,6 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "samverschueren.linter-xo"
-  }
+  },
+  "files.eol": "\n"
 }
