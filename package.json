@@ -2,12 +2,12 @@
   "name": "ts-template",
   "version": "1.0.0",
   "description": "",
-  "exports": "./index.ts",
+  "exports": "./src/index.ts",
   "scripts": {
     "always-debug": "tsx watch --ignore ./test --inspect --trace-warnings ./src/index.ts",
     "debug": "tsx --inspect --trace-warnings ./src/index.ts",
     "format": "xo --fix --prettier",
-    "start": "tsx src/index.ts",
+    "start": "tsx ./src/index.ts",
     "stop-debug": "taskkill /F /IM node.exe",
     "test": "npx ava",
     "prepare": "husky"
